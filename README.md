@@ -1,24 +1,22 @@
-# README
+# Shoe Store App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### User Stories: 
+*   Users can view, buy, sell, shoes on the the app
+*   Users can rate, and comment on a particular shoe
+*   Users can chat with shoe sellers
+*   Sellers are presented with a dashboard of their store
+*   Users can search and filter through shoes
 
-Things you may want to cover:
+### Features: 
+*   Homepage listing products
+*   Searchbar
+*   Shopping cart
+*   Seller dashboard
+*   [Stripe payments](https://stripe.com/docs/api)
+*   [Shippo shipments](https://goshippo.com/docs/reference) 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Models: 
+*   [User](app/models/user.rb)
+*   [Cart](app/models/cart.rb)
+*   [CartItem](app/models/cart_item.rb)
+*   [LineItem](app/models/line_item.rb)
