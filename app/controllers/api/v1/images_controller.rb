@@ -11,17 +11,17 @@ class Api::V1::ImagesController < ApplicationController
         render json: @image, status: :ok
     end
 
-    def create
-        @image = Image.create(image_params)
-        render json: @image, status: :created
-    end
+    # def create
+    #     @image = Image.create(image_params)
+    #     render json: @image, status: :created
+    # end
 
 
     def create
         @image = Image.new(image_params)
-        @image.img = url_for(@photo.image)
-        if @photo.save
-        render json: @photo
+        @image.url = url_for(@image.image)
+        if @image.save
+        render json: @image
         else
         render json: { status: "error", code: 402, message: "Login please" }
         end
@@ -37,7 +37,7 @@ class Api::V1::ImagesController < ApplicationController
     private
 
     def image_params
-        params.require(:image).permit(:image, :url, :product_id, :img)
+        params.permit(:image, :url, :product_id)
     end
 
 end
