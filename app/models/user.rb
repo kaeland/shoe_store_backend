@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_one :inventory
-    has_many :products
+    has_many :products, through: :inventory
     # validates :username, uniqueness: { case_sensitive: false }
 
     has_many :sales, foreign_key: :seller_id, class_name: "Exchange"
