@@ -11,12 +11,6 @@ class Api::V1::ImagesController < ApplicationController
         render json: @image, status: :ok
     end
 
-    # def create
-    #     @image = Image.create(image_params)
-    #     render json: @image, status: :created
-    # end
-
-
     def create
         @image = Image.new(image_params)
         @image.url = url_for(@image.image)
@@ -26,7 +20,6 @@ class Api::V1::ImagesController < ApplicationController
         render json: { status: "error", code: 402, message: "Login please" }
         end
     end
-
 
     def update
         @image = Image.find(params[:id])
